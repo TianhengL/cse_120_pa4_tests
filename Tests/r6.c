@@ -5,7 +5,7 @@
 #include "../mycode4.h"
 
 // notice this value is smaller than the STACKSIZE in mycode4.c
-#define STACKSIZE 65000
+#define STACKSIZE 60000
 
 void WriteAndYield(int p);
 void CreateAndYield(int p);

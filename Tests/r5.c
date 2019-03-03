@@ -4,7 +4,7 @@
 #include "../umix.h"
 #include "../mycode4.h"
 
-#define STACKSIZE 65000
+#define STACKSIZE 60000
 
 void WriteAndYield(int p);
 void CreateAndYield(int p);
