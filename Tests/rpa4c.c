@@ -9,7 +9,7 @@ static int square, cube;	// global variables, shared by threads
 void Main ()
 {
 	Printf("*************************************************************\n");
-	Printf("Reference of the original test givin in pa4c.c.\n");
+	Printf("Reference of the original test given in pa4c.c.\n");
 	Printf("*************************************************************\n");
 	int i, t, me;
 	void printSquares (), printCubes ();
