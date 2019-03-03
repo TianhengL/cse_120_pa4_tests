@@ -14,31 +14,31 @@ void Main() {
 	Printf("Reference of t1.\n");
 	Printf("*************************************************************\n");
 
-	MyInitThreads();
+	InitThreads();
 
 	Printf(
 		"Thread %d: yielding to thread %d.\n",
-		MyGetThread(),
-		MyGetThread()
+		GetThread(),
+		GetThread()
 	);
-	t = MyYieldThread(MyGetThread());
-	Printf("Thread %d: resumed by thread %d.\n", MyGetThread(), t);
+	t = YieldThread(GetThread());
+	Printf("Thread %d: resumed by thread %d.\n", GetThread(), t);
 
-	t = MyCreateThread(YieldTo, MyGetThread());
+	t = CreateThread(YieldTo, GetThread());
 
-	Printf("Thread %d: yielding to thread %d.\n", MyGetThread(), t);
-	t = MyYieldThread(t);
-	Printf("Thread %d: resumed by thread %d.\n", MyGetThread(), t);
+	Printf("Thread %d: yielding to thread %d.\n", GetThread(), t);
+	t = YieldThread(t);
+	Printf("Thread %d: resumed by thread %d.\n", GetThread(), t);
 
 	Printf(
 		"Thread %d: yielding to thread %d.\n",
-		MyGetThread(),
-		MyGetThread()
+		GetThread(),
+		GetThread()
 	);
-	t = MyYieldThread(MyGetThread());
-	Printf("Thread %d: resumed by thread %d.\n", MyGetThread(), t);
+	t = YieldThread(GetThread());
+	Printf("Thread %d: resumed by thread %d.\n", GetThread(), t);
 
-	MyExitThread();
+	ExitThread();
 }
 
 void YieldTo(p)
@@ -47,20 +47,20 @@ void YieldTo(p)
 	int t;
 
 	Printf("Thread %d: yielding to thread %d.\n",
-		MyGetThread(),
-		MyGetThread()
+		GetThread(),
+		GetThread()
 	);
-	t = MyYieldThread(MyGetThread());
-	Printf("Thread %d: resumed by thread %d.\n", MyGetThread(), t);
+	t = YieldThread(GetThread());
+	Printf("Thread %d: resumed by thread %d.\n", GetThread(), t);
 
-	Printf("Thread %d: yielding to thread %d.\n", MyGetThread(), p);
-	t = MyYieldThread(p);
-	Printf("Thread %d: resumed by thread %d.\n", MyGetThread(), t);
+	Printf("Thread %d: yielding to thread %d.\n", GetThread(), p);
+	t = YieldThread(p);
+	Printf("Thread %d: resumed by thread %d.\n", GetThread(), t);
 
 	Printf("Thread %d: yielding to thread %d.\n",
-		MyGetThread(),
-		MyGetThread()
+		GetThread(),
+		GetThread()
 	);
-	t = MyYieldThread(MyGetThread());
-	Printf("Thread %d: resumed by thread %d.\n", MyGetThread(), t);
+	t = YieldThread(GetThread());
+	Printf("Thread %d: resumed by thread %d.\n", GetThread(), t);
 }

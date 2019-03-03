@@ -1,5 +1,3 @@
-// Authro: Tianheng "Oliver" Liu
-
 #include "../aux.h"
 #include "../umix.h"
 #include "../mycode4.h"
